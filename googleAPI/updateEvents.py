@@ -63,12 +63,18 @@ def get_todays_events(service):
     return events_result.get("items", [])
 
 def merge_events(existing, new):
-    """Merge new events into the existing list based on event ID."""
-    existing_ids = {event["id"] for event in existing if "id" in event}
+    """
+    Merge new events with existing events, preserving the 'joined' flag,
+    and remove events that no longer appear in the new events.
+    """
+    new_events_by_id = {event["id"]: event for event in new if "id" in event}
     for event in new:
-        if "id" in event and event["id"] not in existing_ids:
-            existing.append(event)
-    return existing
+        eid = event.get("id")
+        for old_event in existing:
+            if old_event.get("id") == eid and old_event.get("joined"):
+                event["joined"] = True
+                break;
+    return list(new_events_by_id.values())
 
 def get_credentials():
     """Load credentials from token.json, refreshing or reauthorizing if needed."""

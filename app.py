@@ -18,11 +18,12 @@ def load_events():
     with open(EVENTS_FILE, "r") as f:
         return json.load(f)
 
-def save_events():
+def save_events(events):
     with open(EVENTS_FILE, "w") as f:
         json.dump(events, f, indent=4)
 
 def set_bulb_color(hue: int):
+    print("SETTING BULB COLOR", flush=True)
     bulb = device_utils.get_light()
     if bulb:
         retries = 3
@@ -31,11 +32,12 @@ def set_bulb_color(hue: int):
                 asyncio.run(bulb.set_hsv(hue, 100, 100))
                 return
             except Exception as e:
-                print(f"Attempt {attempt+1} failed: {e}")
+                print(f"Attempt {attempt+1} failed: {e}", flush=True)
                 time.sleep(0.5)
-        print("Failed to set light color after several retries.")
+        print("Failed to set light color after several retries.", flush=True)
 
 def set_in_color():
+    print("SETTING IN COLOR", flush=True)
     set_bulb_color(RED)
 
 def set_out_color():
@@ -63,7 +65,9 @@ def in_meeting():
         events = load_events()
         found = False
         for event in events:
-            if event.get("id") == meeting_id:
+            if ("conferenceData" in event and
+                "conferenceId" in event["conferenceData"] and
+                event["conferenceData"]["conferenceId"] == meeting_id):
                 event["joined"] = True
                 found = True
                 break
@@ -71,6 +75,7 @@ def in_meeting():
             save_events(events)
 
     set_in_color()
+    print("FINISHED", flush=True)
     return jsonify(device_utils.get_status()), 200
 
 @app.route('/out_meeting', methods=['GET'])
@@ -94,5 +99,6 @@ def get_status():
     return jsonify(status), 200
 
 if __name__ == '__main__':
+    print("STARTING UP!!!", flush=True)
     app.run(host="0.0.0.0", port=5000, debug=True)
 

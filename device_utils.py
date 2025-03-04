@@ -3,6 +3,7 @@ import json
 import asyncio
 import re
 import time
+import threading
 from kasa import Discover
 from kasa.iot import IotBulb
 
@@ -10,12 +11,14 @@ def simplify(s):
     return re.sub(r'\W+', '', s).lower()
 
 CONFIG_FILE = 'config.json'
+file_lock = threading.Lock()
 
 def get_config():
     if os.path.exists(CONFIG_FILE):
         try:
-            with open(CONFIG_FILE, 'r') as f:
-                config = json.load(f)
+            with file_lock:
+                with open(CONFIG_FILE, 'r') as f:
+                    config = json.load(f)
             return config
         except json.JSONDecodeError:
             # If the file is corrupted, return an empty dict.
@@ -23,8 +26,9 @@ def get_config():
     return {}
 
 def set_config(config):
-    with open(CONFIG_FILE, 'w') as f:
-        json.dump(config, f, indent=4)
+    with file_lock:
+        with open(CONFIG_FILE, 'w') as f:
+            json.dump(config, f, indent=4)
 
 def get_cached_ip():
     config = get_config()

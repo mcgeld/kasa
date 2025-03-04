@@ -85,12 +85,16 @@ def update_light_state():
     # Decide on new state.
     if meeting_current:
         # Meeting is in progress and not joined: set to orange.
-        print("Current meeting not joined; setting light to orange.")
+        print("Current meeting not joined; setting light to purple.")
         requests.get(f"{API_BASE_URL}/ongoing_meeting")
     elif meeting_upcoming:
         # Meeting upcoming and light is not red: set to yellow.
-        print("Meeting upcoming; setting light to yellow.")
+        print("Meeting upcoming; setting light to blue.")
         requests.get(f"{API_BASE_URL}/upcoming_meeting")
+    elif current_state != RED and current_state != GREEN:
+        # No meeting and light is not red or green: set to green.
+        print("No meeting; setting light to green.")
+        requests.get(f"{API_BASE_URL}/out_meeting")
 
 
 if __name__ == "__main__":
