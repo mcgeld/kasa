@@ -1,0 +1,151 @@
+[
+    {
+        "kind": "calendar#event",
+        "etag": "\"3476006155872000\"",
+        "id": "vqujdlqk17na5lqj0udkp3so1b_20250304T161500Z",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dnF1amRscWsxN25hNWxxajB1ZGtwM3NvMWJfMjAyNTAzMDRUMTYxNTAwWiBtZ2VsZG1hY2hlckBjb25zZXJ2aWNlLmNvbQ",
+        "created": "2022-09-21T18:13:02.000Z",
+        "updated": "2025-01-27T18:37:57.936Z",
+        "summary": "Provider Resolution Scrum",
+        "creator": {
+            "email": "dglass@conservice.com"
+        },
+        "organizer": {
+            "email": "tsmedley@conservice.com",
+            "displayName": "Tyler Smedley"
+        },
+        "start": {
+            "dateTime": "2025-03-04T09:15:00-07:00",
+            "timeZone": "America/Denver"
+        },
+        "end": {
+            "dateTime": "2025-03-04T09:30:00-07:00",
+            "timeZone": "America/Denver"
+        },
+        "recurringEventId": "vqujdlqk17na5lqj0udkp3so1b_R20250127T161500",
+        "originalStartTime": {
+            "dateTime": "2025-03-04T09:15:00-07:00",
+            "timeZone": "America/Denver"
+        },
+        "iCalUID": "vqujdlqk17na5lqj0udkp3so1b_R20250127T161500@google.com",
+        "sequence": 2,
+        "attendees": [
+            {
+                "email": "dglass@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "jhumble@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "tsmedley@conservice.com",
+                "displayName": "Tyler Smedley",
+                "organizer": true,
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "mgeldmacher@conservice.com",
+                "self": true,
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "mmcgary@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "troyrichardson@conservice.com",
+                "responseStatus": "needsAction"
+            },
+            {
+                "email": "jshepherd@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "swathir@conservice.com",
+                "optional": true,
+                "responseStatus": "declined",
+                "comment": "Declined because I\u2019m in focus time"
+            },
+            {
+                "email": "bradwest@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "amanwaring@conservice.com",
+                "displayName": "Andrea Manwaring",
+                "responseStatus": "declined"
+            },
+            {
+                "email": "tiffanycartwright@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "codyperry@conservice.com",
+                "responseStatus": "declined"
+            },
+            {
+                "email": "sdangol@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "cnye@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "tkutte@conservice.com",
+                "responseStatus": "accepted"
+            },
+            {
+                "email": "cmilne@conservice.com",
+                "displayName": "Colton Milne",
+                "optional": true,
+                "responseStatus": "tentative"
+            }
+        ],
+        "hangoutLink": "https://meet.google.com/rzf-vkmb-znb",
+        "conferenceData": {
+            "entryPoints": [
+                {
+                    "entryPointType": "video",
+                    "uri": "https://meet.google.com/rzf-vkmb-znb",
+                    "label": "meet.google.com/rzf-vkmb-znb"
+                },
+                {
+                    "entryPointType": "more",
+                    "uri": "https://tel.meet/rzf-vkmb-znb?pin=8207870712563",
+                    "pin": "8207870712563"
+                },
+                {
+                    "regionCode": "US",
+                    "entryPointType": "phone",
+                    "uri": "tel:+1-414-909-6015",
+                    "label": "+1 414-909-6015",
+                    "pin": "899819697"
+                }
+            ],
+            "conferenceSolution": {
+                "key": {
+                    "type": "hangoutsMeet"
+                },
+                "name": "Google Meet",
+                "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+            },
+            "conferenceId": "rzf-vkmb-znb"
+        },
+        "reminders": {
+            "useDefault": true
+        },
+        "attachments": [
+            {
+                "fileUrl": "https://docs.google.com/document/d/1W4n-GO_SXqVGVGHBuRjcUX8Zc8p3lrDQXJBPG3Khifk/edit",
+                "title": "Notes - Provider Resolution Scrum",
+                "mimeType": "application/vnd.google-apps.document",
+                "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.document",
+                "fileId": "1W4n-GO_SXqVGVGHBuRjcUX8Zc8p3lrDQXJBPG3Khifk"
+            }
+        ],
+        "eventType": "default"
+    }
+]
